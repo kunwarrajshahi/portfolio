@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Shahi||frontend Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8254ad24dd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+
+        <DIV class="container">
+            <nav>
+                <img src="monarchy.png" alt="">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#">Contact</a></li>
+
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Frontend Developer</p>
+                <h1> Hi, I'm <span>Raj Shahi </span></h1>
+            </div>
+        </DIV>
+    </div>
+    <!-- ------------------about ---------------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="raj.jpg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle"> About Me</h1>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde velit nostrum harum cupiditate,
+                        quod earum. Quia distinctio dolores animi nostrum ipsa quis, ut iure doloremque beatae! Quis,
+                        iure distinctio impedit exercitationem minima maxime blanditiis! Lorem ipsum dolor sit amet
+                        consectetur, adipisicing elit. Molestias corporis, dignissimos impedit perferendis perspiciatis
+                        in cum qui ex iusto debitis laboriosam vitae, dolore nisi, expedita neque ab sed. Ab ut corporis
+                        autem doloribus consequatur.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">
+                            Skills
+                        </p>
+                        <p class="tab-links" onclick="opentab('Education')">
+                            Education
+                        </p>
+                        <p class="tab-links" onclick="opentab('Experience')">
+                            Experience
+                        </p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li>
+                                <span>Html</span>
+                            </li>
+                            <li>
+                                <span>CSS</span>
+                            </li>
+                            <li>
+                                <span>java script</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents " id="Education">
+                        <ul>
+                            <li>
+                                <span>Diploma</span><br> Maharana pratap polytechnic
+                            </li>
+                            <li>
+                                <span>Secondary</span><br> Central Hindu School
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Experience">
+                        <ul>
+                            <li>
+                                <span>Frontend Developer</span><br> Magnet Tech pvt Ltd
+
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -----------------CONTACT-------------- -->
+    <DIV id="CONTACT">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="subtitle">Contact me</h1>
+                    <p><i class="fa-solid fa-envelope"></i> shahiraj380@gmail.com</p>
+                    <p><i class="fa-solid fa-phone-volume"></i> xxxxxxxx17</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/search?q=kunwarrajshahi"><i class="fa-brands fa-github"></i></i></a>
+                        <a href="https://www.linkedin.com/in/raj-shahi-069147248/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/kunwar_raj_shahi/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <div ><a href="Raj's Resume.pdf" download class="btn"> Download Cv</a></div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="name" placeholder="your Name" required>
+                        <input type="email" name="email" id="" placeholder="your email" required>
+                        <textarea name="message" id=""  rows="6"  placeholder="your message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright @monarchy</p>
+        </div>
+    </DIV>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz27lbKKq1jzW9pBxHSP1x7cgv_6E2U10r-ns-ZckQNQGDhllvXDrN1TmnHfw4NHxgK/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+
+</html>
